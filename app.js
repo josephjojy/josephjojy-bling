@@ -73,11 +73,16 @@ controls.append(divButtons);
 let inputControls = document.createElement('div');
 let inputText = document.createElement('input');
 let inputColor = document.createElement('select');
-let blobNope = document.createElement('div');
+let blobNope = document.createElement('span');
 
 
 //inputText
+let valueOnImage = document.createElement('p');
 inputText.setAttribute('placeholder','Name your Bling!');
+inputText.value = ""
+inputText.addEventListener("keyup", () => {
+    valueOnImage.innerText = inputText.value
+});
 
 //inputColor
 const colors = [
@@ -109,18 +114,22 @@ let nope = document.createElement('input');
 blob.type = 'radio';
 blob.name = 'blobNope';
 blob.value = 'blob';
-blob.innerText = 'Blob';
+let blobtext = document.createElement('span');
+blobtext.innerText = 'Blob';
 nope.type = 'radio';
 nope.name = 'blobNope';
 nope.value = 'nope';
-nope.innerText = 'Nope';
+let nopetext = document.createElement('span');
+nopetext.innerText = 'Nope';
 
 
 
 inputControls.append(inputText);
 inputControls.append(inputColor);
 blobNope.append(blob);
+blobNope.append(blobtext);
 blobNope.append(nope);
+blobNope.append(nopetext);
 inputControls.append(blobNope);
 controls.append(inputControls);
 outerDiv.append(controls);
@@ -130,5 +139,5 @@ Preview
 --------------------------------------------------------------
 */
 let prev =  document.createElement('div')
-
+prev.append(valueOnImage);
 outerDiv.append(prev);
