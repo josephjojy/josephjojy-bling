@@ -155,6 +155,18 @@ blob.addEventListener('click',(e)=>{prev.style.backgroundImage = "url(./assets/i
 nope.addEventListener('click',(e)=>{prev.style.backgroundImage = ""})
 
 
+//capture
+let capture = document.createElement('button');
+capture.style.backgroundImage = "url(/assets/images/camera.png)";
+capture.style.width = "2rem";
+capture.style.height = "2rem";
+capture.style.backgroundSize = "100%";
+capture.style.backgroundRepeat = "no-repeat";
+capture.addEventListener('click',()=>{
+
+})
+
+
 inputControls.append(inputText);
 inputControls.append(inputColor);
 blobNope.append(blob);
@@ -163,7 +175,9 @@ blobNope.append(nope);
 blobNope.append(nopetext);
 inputControls.append(blobNope);
 controls.append(inputControls);
+controls.append(capture);
 outerDiv.append(controls);
+
 /*
 --------------------------------------------------------------
 Preview
@@ -191,3 +205,24 @@ valueOnImage.style.margin = "1rem";
 prev.append(valueOnImage);
 prev.append(prevImg);
 outerDiv.append(prev);
+
+
+/*
+--------------------------------------------------------------
+Footer
+--------------------------------------------------------------
+*/
+let footer = document.createElement('footer');
+let footImg = document.createElement('img');
+let footText = document.createElement('span');
+footImg.src = "./assets/images/heart-fill.svg";
+footer.style.textAlign = 'center';
+footer.style.wordSpacing = '0.5rem';
+footer.style.bottom= "10px";
+footer.style.position = "absolute";
+footer.style.width = "100%";
+footText.innerText = "Credits: Polaroid  TV  Traitor  Fall-Guy  Radio"
+
+footer.append(footImg);
+footer.append(footText);
+root.append(footer);
