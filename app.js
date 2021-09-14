@@ -135,6 +135,7 @@ colors.forEach(color => {
     inputColor.append(option);
 })
 inputColor.addEventListener('change',(e)=>{
+    prev.style.backgroundColor = e.target.value;
     body.style.backgroundColor = e.target.value;
 })
 
@@ -155,6 +156,28 @@ blob.addEventListener('click',(e)=>{prev.style.backgroundImage = "url(./assets/i
 nope.addEventListener('click',(e)=>{prev.style.backgroundImage = ""})
 
 
+//generateCards
+const generateCards = ()=>{
+    let card =prev.cloneNode(true);
+    card.backgroundSize="100%";
+    card.style.position ="relative";
+    card.style.border = "solid 2px";
+    card.style.borderRight = "solid 4px";
+    card.style.margin="10px 20px";
+    
+    let closeBtn = document.createElement("img");
+    closeBtn.src = "./assets/images/icon_delete.png";
+    closeBtn.style.height = "50px";
+    closeBtn.style.position="absolute";
+    closeBtn.style.right="-20px";
+    closeBtn.style.top="-20px";
+    closeBtn.addEventListener("click",()=>card.remove())
+    card.append(closeBtn);
+    dispCard.append(card);
+ }
+
+
+
 //capture
 let capture = document.createElement('button');
 capture.style.backgroundImage = "url(/assets/images/camera.png)";
@@ -162,9 +185,7 @@ capture.style.width = "2rem";
 capture.style.height = "2rem";
 capture.style.backgroundSize = "100%";
 capture.style.backgroundRepeat = "no-repeat";
-capture.addEventListener('click',()=>{
-
-})
+capture.addEventListener('click',generateCards);
 
 
 inputControls.append(inputText);
@@ -209,6 +230,19 @@ outerDiv.append(prev);
 
 /*
 --------------------------------------------------------------
+displayCards
+--------------------------------------------------------------
+*/
+
+let dispCard= document.createElement("div");
+root.append(dispCard);
+dispCard.style.display = "flex";
+dispCard.style.flexWrap = "wrap";
+dispCard.style.justifyContent = "space-around";
+
+
+/*
+--------------------------------------------------------------
 Footer
 --------------------------------------------------------------
 */
@@ -217,7 +251,6 @@ let footText = document.createElement('span');
 footer.style.textAlign = 'center';
 footer.style.wordSpacing = '0.5rem';
 footer.style.bottom= "10px";
-footer.style.position = "absolute";
 footer.style.width = "100%";
 footText.innerText = "♥Credits: Polaroid  TV  Traitor  Fall-Guy  Radio"
 
