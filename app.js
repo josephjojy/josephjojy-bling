@@ -47,24 +47,51 @@ let text2 = document.createElement('H1');
 text1.innerText = 'Sizzle your Life';
 text2.innerText = 'Make a Card';
 
+// controls.style.flexBasis = "50%";
+// controls.style.width = "50vw";
+// controls.style.margin = '10rem';
+
 controls.style.textAlign = 'left';
 controls.append(text1);
 controls.append(text2);
 
+
+//prevImg Function
+let prevImg = document.createElement('img');
+prevImg.src = '';
+const createImage = (e) => {
+    if(prevImg.src.slice(-(e.target.value.length)) != e.target.value){
+        prevImg.src = e.target.value;
+        prevImg.style.width = "250px";
+        let allButtons = document.querySelectorAll("button")
+        allButtons.forEach((button) => {
+            button.style.backgroundColor = "inherit";
+            button.style.color = "black";
+        });
+        e.target.style.backgroundColor = 'black';
+        e.target.style.color = "white";
+    }
+    else{
+        prevImg.src = ""
+        e.target.style.backgroundColor = "inherit"
+        e.target.style.color = "black"
+    }
+}
+
 //buttons
 let buttons = {
-    "Polaroid" : "./assets/images/polaroid.png" ,
-    "TV" : "./assets/images/tv.png",
-    "Traitor" : "./assets/images/among-us.png",
-    "Fall Guy" : "./assets/images/fall-guy-01.png",
-    "Radio" : "./assets/images/radio-02.png"
+    "Polaroid" : "/assets/images/polaroid.png" ,
+    "TV" : "/assets/images/tv.png",
+    "Traitor" : "/assets/images/among-us.png",
+    "Fall Guy" : "/assets/images/fall-guy-01.png",
+    "Radio" : "/assets/images/radio-02.png"
 }
 let divButtons = document.createElement('div');
 Object.keys(buttons).forEach(name => {
     let btn = document.createElement("button")
     btn.innerText = name;
     btn.value = buttons[name];
-    //btn.addEventListener("click" , createImage )
+    btn.addEventListener("click" , createImage )
     divButtons.append(btn)
   });
 controls.append(divButtons);
@@ -80,8 +107,11 @@ let blobNope = document.createElement('span');
 let valueOnImage = document.createElement('p');
 inputText.setAttribute('placeholder','Name your Bling!');
 inputText.value = ""
+valueOnImage.innerText = "Stuff"
 inputText.addEventListener("keyup", () => {
     valueOnImage.innerText = inputText.value
+    if(valueOnImage.innerText == "")
+        valueOnImage.innerText = "Stuff"
 });
 
 //inputColor
@@ -121,7 +151,8 @@ nope.name = 'blobNope';
 nope.value = 'nope';
 let nopetext = document.createElement('span');
 nopetext.innerText = 'Nope';
-
+blob.addEventListener('click',(e)=>{prev.style.backgroundImage = "url(./assets/images/blob.png)"})
+nope.addEventListener('click',(e)=>{prev.style.backgroundImage = ""})
 
 
 inputControls.append(inputText);
@@ -139,5 +170,24 @@ Preview
 --------------------------------------------------------------
 */
 let prev =  document.createElement('div')
+
+prev.style.display = 'flex';
+prev.style.flexDirection = 'column';
+prev.style.alignItems = 'center';
+prev.style.backgroundSize = "100%";
+prev.style.backgroundRepeat = "no-repeat";
+prev.style.minHeight = "400px";
+prev.style.minWidth = "400px";
+prev.style.justifyContent = 'space-between';
+prev.style.paddingBottom = '100px'
+
+prevImg.style.alignItems = 'center';
+
+valueOnImage.style.margin = "1rem";
+// prev.style.flexBasis = "50%";
+// prev.style.width = "50vw";
+// prev.style.margin = '10rem 5rem';
+
 prev.append(valueOnImage);
+prev.append(prevImg);
 outerDiv.append(prev);
