@@ -213,16 +213,13 @@ Footer
 --------------------------------------------------------------
 */
 let footer = document.createElement('footer');
-let footImg = document.createElement('img');
 let footText = document.createElement('span');
-footImg.src = "./assets/images/heart-fill.svg";
 footer.style.textAlign = 'center';
 footer.style.wordSpacing = '0.5rem';
 footer.style.bottom= "10px";
 footer.style.position = "absolute";
 footer.style.width = "100%";
-footText.innerText = "Credits: Polaroid  TV  Traitor  Fall-Guy  Radio"
+footText.innerText = "♥Credits: Polaroid  TV  Traitor  Fall-Guy  Radio"
 
-footer.append(footImg);
 footer.append(footText);
 root.append(footer);
