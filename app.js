@@ -7,6 +7,7 @@ let body = document.querySelector('body');
 
 let root = document.querySelector("#root");
 root.style.fontFamily = "Montserrat"
+root.style.height = "100vh";
 
 /*
 --------------------------------------------------------------
@@ -47,9 +48,12 @@ let text2 = document.createElement('H1');
 text1.innerText = 'Sizzle your Life';
 text2.innerText = 'Make a Card';
 
-// controls.style.flexBasis = "50%";
-// controls.style.width = "50vw";
-// controls.style.margin = '10rem';
+text1.style.fontSize = "40px";
+text1.style.padding = "50px 0 10px 10px";
+text2.style.fontSize = "65px";
+text2.style.padding = "10px 0 40px 10px";
+text2.style.fontWeight = "bold";
+
 
 controls.style.textAlign = 'left';
 controls.append(text1);
@@ -92,9 +96,15 @@ Object.keys(buttons).forEach(name => {
     btn.innerText = name;
     btn.value = buttons[name];
     btn.style.backgroundColor = "inherit";
+    btn.style.fontSize = "16px";
+    btn.style.padding = "15px" 
+    btn.style.margin = "10px";
+    btn.style.borderRadius = "10px";
+    btn.style.boxShadow = "5px 3px 3px black";
     btn.addEventListener("click" , createImage )
     divButtons.append(btn)
   });
+divButtons.style.padding = "20px 0 0 10px"; 
 controls.append(divButtons);
 
 //other controls
@@ -102,7 +112,7 @@ let inputControls = document.createElement('div');
 let inputText = document.createElement('input');
 let inputColor = document.createElement('select');
 let blobNope = document.createElement('span');
-
+inputControls.style.padding = "20px 0 0 10px"; 
 
 //inputText
 let valueOnImage = document.createElement('p');
@@ -116,6 +126,10 @@ inputText.addEventListener("keyup", () => {
 });
 inputText.style.backgroundColor = "black";
 inputText.style.color = "white";
+inputText.style.padding = "15px";
+inputText.style.borderRadius = "10px";
+inputText.style.margin = "10px";
+inputText.style.boxShadow = "5px 3px 3px black";
 
 
 //inputColor
@@ -144,6 +158,10 @@ inputColor.addEventListener('change',(e)=>{
 })
 inputColor.style.backgroundColor = "black";
 inputColor.style.color = "white";
+inputColor.style.padding = "15px";
+inputColor.style.borderRadius = "10px";
+inputColor.style.margin = "10px";
+inputColor.style.boxShadow = "5px 3px 3px black";
 
 
 
@@ -164,6 +182,11 @@ blob.addEventListener('click',(e)=>{prev.style.backgroundImage = "url(./assets/i
 nope.addEventListener('click',(e)=>{prev.style.backgroundImage = ""})
 blobNope.style.backgroundColor = "black";
 blobNope.style.color = "white";
+blobNope.style.padding = "15px";
+blobNope.style.borderRadius = "10px";
+blobNope.style.margin = "10px";
+blobNope.style.boxShadow = "5px 3px 3px black";
+blobNope.style.width = "150px";
 
 //generateCards
 const generateCards = ()=>{
@@ -188,13 +211,15 @@ const generateCards = ()=>{
 
 
 //capture
-let capture = document.createElement('button');
-capture.style.backgroundImage = "url(/assets/images/camera.png)";
-capture.style.width = "2rem";
-capture.style.height = "2rem";
-capture.style.backgroundSize = "100%";
-capture.style.backgroundRepeat = "no-repeat";
+let capture = document.createElement('img');
+capture.src= "/assets/images/camera.png";
+capture.style.width = "3rem";
 capture.style.backgroundColor = "inherit";
+capture.style.padding = "10px";
+capture.style.borderRadius = "10px";
+capture.style.margin = "10px";
+capture.style.border = "1px solid black";
+capture.style.boxShadow = "5px 3px 3px black";
 
 capture.addEventListener('click',generateCards);
 
@@ -229,7 +254,9 @@ prev.style.paddingBottom = '100px'
 
 prevImg.style.alignItems = 'center';
 
-valueOnImage.style.margin = "1rem";
+
+valueOnImage.style.fontSize = "40px";
+valueOnImage.style.fontWeight = "bold";
 // prev.style.flexBasis = "50%";
 // prev.style.width = "50vw";
 // prev.style.margin = '10rem 5rem';
@@ -264,8 +291,9 @@ footer.style.justifyContent = "center"
 footer.style.wordSpacing = '0.5rem';
 footer.style.flexWrap = "wrap";
 footer.style.display = "flex";
-footer.style.bottom= "10px";
+footer.style.bottom= "0";
 footer.style.width = "100%";
+footer.style.marginBottom = "5%";
 footerEle.forEach((items,index)=>{
     if(index == 0){
      a = document.createElement("p");
