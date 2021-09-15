@@ -101,6 +101,7 @@ Object.keys(buttons).forEach(name => {
     btn.style.margin = "10px";
     btn.style.borderRadius = "10px";
     btn.style.boxShadow = "5px 3px 3px black";
+    btn.style.cursor = "pointer";
     btn.addEventListener("click" , createImage )
     divButtons.append(btn)
   });
@@ -205,6 +206,7 @@ const generateCards = ()=>{
     closeBtn.style.position="absolute";
     closeBtn.style.right="-20px";
     closeBtn.style.top="-20px";
+    closeBtn.style.cursor = "pointer";
     closeBtn.addEventListener("click",()=>card.remove())
     card.append(closeBtn);
     dispCard.insertBefore(card,dispCard.children[0]);
