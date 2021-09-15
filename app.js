@@ -224,6 +224,7 @@ capture.style.borderRadius = "10px";
 capture.style.margin = "10px";
 capture.style.border = "1px solid black";
 capture.style.boxShadow = "5px 3px 3px black";
+capture.style.cursor = "pointer";
 capture.addEventListener("mousedown",() => capture.style.backgroundColor = "white");
 capture.addEventListener("mouseup",() => capture.style.backgroundColor = "inherit");
 
