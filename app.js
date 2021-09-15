@@ -252,7 +252,7 @@ prev.style.backgroundRepeat = "no-repeat";
 prev.style.minHeight = "400px";
 prev.style.minWidth = "400px";
 prev.style.justifyContent = 'space-between';
-prev.style.paddingBottom = '100px'
+prev.style.paddingBottom = '140px'
 
 prevImg.style.alignItems = 'center';
 
@@ -295,7 +295,8 @@ footer.style.flexWrap = "wrap";
 footer.style.display = "flex";
 footer.style.bottom= "0";
 footer.style.width = "100%";
-footer.style.marginBottom = "5%";
+footer.style.marginTop = "200px";
+footer.style.fontWeight = "bold";
 footerEle.forEach((items,index)=>{
     if(index == 0){
      a = document.createElement("p");
