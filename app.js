@@ -113,6 +113,8 @@ let inputText = document.createElement('input');
 let inputColor = document.createElement('select');
 let blobNope = document.createElement('span');
 inputControls.style.padding = "20px 0 0 10px"; 
+inputControls.style.display = "flex";
+inputControls.style.flexWrap = "wrap";
 
 //inputText
 let valueOnImage = document.createElement('p');
@@ -186,7 +188,7 @@ blobNope.style.padding = "15px";
 blobNope.style.borderRadius = "10px";
 blobNope.style.margin = "10px";
 blobNope.style.boxShadow = "5px 3px 3px black";
-blobNope.style.width = "150px";
+//blobNope.style.width = "150px";
 
 //generateCards
 const generateCards = ()=>{
