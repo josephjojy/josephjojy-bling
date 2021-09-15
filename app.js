@@ -173,7 +173,7 @@ const generateCards = ()=>{
     closeBtn.style.top="-20px";
     closeBtn.addEventListener("click",()=>card.remove())
     card.append(closeBtn);
-    dispCard.append(card);
+    dispCard.insertBefore(card,dispCard.children[0]);
  }
 
 
