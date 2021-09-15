@@ -19,8 +19,8 @@ head.innerText = "BLING!";
 head.style.display = 'flex';
 head.style.justifyContent = 'center';
 head.style.margin = '30px';
-head.style.fontWeight = 'bold';
-head.style.fontSize = '35px';
+head.style.fontWeight = '900';
+head.style.fontSize = '2rem';
 head.style.textShadow = '3px 3px rgb(230, 158, 5)';
 
 root.append(head);
