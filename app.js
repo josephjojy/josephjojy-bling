@@ -255,8 +255,8 @@ prev.style.alignItems = 'center';
 prev.style.backgroundSize = "100%";
 prev.style.backgroundColor = "snow";
 prev.style.backgroundRepeat = "no-repeat";
-prev.style.maxHeight = "400px";
-prev.style.maxWidth = "400px";
+prev.style.height = "400px";
+prev.style.width = "400px";
 prev.style.justifyContent = 'space-between';
 prev.style.paddingBottom = '140px'
 
