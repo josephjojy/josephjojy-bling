@@ -256,7 +256,7 @@ prev.style.backgroundSize = "100%";
 prev.style.backgroundColor = "snow";
 prev.style.backgroundRepeat = "no-repeat";
 prev.style.maxHeight = "400px";
-prev.style.minWidth = "400px";
+prev.style.maxWidth = "400px";
 prev.style.justifyContent = 'space-between';
 prev.style.paddingBottom = '140px'
 
@@ -266,6 +266,7 @@ prevImg.style.alignItems = 'center';
 valueOnImage.style.fontSize = "4rem";
 valueOnImage.style.fontWeight = "900";
 valueOnImage.style.textShadow = "black 2px 2px 2px";
+valueOnImage.style.wordBreak = "break-all"
 //valueOnImage.style.top = "-15%";
 // prev.style.flexBasis = "50%";
 // prev.style.width = "50vw";
