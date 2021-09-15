@@ -91,6 +91,7 @@ Object.keys(buttons).forEach(name => {
     let btn = document.createElement("button")
     btn.innerText = name;
     btn.value = buttons[name];
+    btn.style.backgroundColor = "inherit";
     btn.addEventListener("click" , createImage )
     divButtons.append(btn)
   });
@@ -113,6 +114,9 @@ inputText.addEventListener("keyup", () => {
     if(valueOnImage.innerText == "")
         valueOnImage.innerText = "Stuff"
 });
+inputText.style.backgroundColor = "black";
+inputText.style.color = "white";
+
 
 //inputColor
 const colors = [
@@ -138,6 +142,10 @@ inputColor.addEventListener('change',(e)=>{
     prev.style.backgroundColor = e.target.value;
     body.style.backgroundColor = e.target.value;
 })
+inputColor.style.backgroundColor = "black";
+inputColor.style.color = "white";
+
+
 
 //blobNope
 let blob = document.createElement('input');
@@ -154,7 +162,8 @@ let nopetext = document.createElement('span');
 nopetext.innerText = 'Nope';
 blob.addEventListener('click',(e)=>{prev.style.backgroundImage = "url(./assets/images/blob.png)"})
 nope.addEventListener('click',(e)=>{prev.style.backgroundImage = ""})
-
+blobNope.style.backgroundColor = "black";
+blobNope.style.color = "white";
 
 //generateCards
 const generateCards = ()=>{
@@ -185,6 +194,8 @@ capture.style.width = "2rem";
 capture.style.height = "2rem";
 capture.style.backgroundSize = "100%";
 capture.style.backgroundRepeat = "no-repeat";
+capture.style.backgroundColor = "inherit";
+
 capture.addEventListener('click',generateCards);
 
 
@@ -246,13 +257,34 @@ dispCard.style.justifyContent = "space-around";
 Footer
 --------------------------------------------------------------
 */
+
+let footerEle = ["♥Credits:","Polaroid","TV","Traitor","Fall-Guy","Radio"];
 let footer = document.createElement('footer');
-let footText = document.createElement('span');
-footer.style.textAlign = 'center';
+footer.style.justifyContent = "center"
 footer.style.wordSpacing = '0.5rem';
+footer.style.flexWrap = "wrap";
+footer.style.display = "flex";
 footer.style.bottom= "10px";
 footer.style.width = "100%";
-footText.innerText = "♥Credits: Polaroid  TV  Traitor  Fall-Guy  Radio"
-
-footer.append(footText);
+footerEle.forEach((items,index)=>{
+    if(index == 0){
+     a = document.createElement("p");
+    }
+    else{
+     a = document.createElement("a");
+        a.addEventListener('mouseover',(e)=>{
+            e.target.style.borderBottom = "2px solid black";
+        })
+        a.addEventListener('mouseout',(e)=>{
+            e.target.style.borderBottom = "0px";
+        })
+        a.href = "#";
+        a.target = "_blank";
+        a.style.textDecoration = "none";
+        a.style.color = "black";
+        a.style.marginLeft = "1em";
+    }
+    a.innerText = items;
+    footer.appendChild(a);
+})
 root.append(footer);
