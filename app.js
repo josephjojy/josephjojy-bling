@@ -4,7 +4,7 @@ Your code goes in this file
 --------------------------------------------------------------
 */
 let body = document.querySelector('body');
-
+body.style.backgroundColor = "snow";
 let root = document.querySelector("#root");
 root.style.fontFamily = "Montserrat"
 root.style.height = "100vh";
@@ -48,10 +48,10 @@ let text2 = document.createElement('H1');
 text1.innerText = 'Sizzle your Life';
 text2.innerText = 'Make a Card';
 
-text1.style.fontSize = "40px";
+text1.style.fontSize = "33px";
 text1.style.padding = "50px 0 10px 10px";
 text2.style.fontSize = "65px";
-text2.style.padding = "10px 0 40px 10px";
+text2.style.padding = "10px 0 30px 10px";
 text2.style.fontWeight = "bold";
 
 
@@ -252,8 +252,9 @@ prev.style.display = 'flex';
 prev.style.flexDirection = 'column';
 prev.style.alignItems = 'center';
 prev.style.backgroundSize = "100%";
+prev.style.backgroundColor = "snow";
 prev.style.backgroundRepeat = "no-repeat";
-prev.style.minHeight = "400px";
+prev.style.maxHeight = "400px";
 prev.style.minWidth = "400px";
 prev.style.justifyContent = 'space-between';
 prev.style.paddingBottom = '140px'
@@ -261,8 +262,10 @@ prev.style.paddingBottom = '140px'
 prevImg.style.alignItems = 'center';
 
 
-valueOnImage.style.fontSize = "40px";
-valueOnImage.style.fontWeight = "bold";
+valueOnImage.style.fontSize = "4rem";
+valueOnImage.style.fontWeight = "900";
+valueOnImage.style.textShadow = "black 2px 2px 2px";
+//valueOnImage.style.top = "-15%";
 // prev.style.flexBasis = "50%";
 // prev.style.width = "50vw";
 // prev.style.margin = '10rem 5rem';
